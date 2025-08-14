@@ -1,11 +1,10 @@
 import { View, Text } from "react-native";
 import React from "react";
-import { Link } from "expo-router";
 
-export default function about() {
+export default function HomeScreen() {
   return (
     <View>
-      <Link href="index">index</Link>
+      <Text>index</Text>
     </View>
   );
 }
