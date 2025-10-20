@@ -44,7 +44,7 @@ export default function TabLayout() {
             <AntDesign name="plus" size={24} color={color} />
           ),
           headerShown: false,
-          tabBarStyle: { display: "none" },
+          tabBarStyle: { display: "none" }, // Hides tabs when navigating this screen
         }}
       />
       <Tabs.Screen

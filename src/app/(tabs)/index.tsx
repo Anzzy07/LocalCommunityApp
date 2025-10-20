@@ -1,10 +1,37 @@
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 import React from "react";
+import { formatDistanceToNowStrict } from "date-fns";
+
+import posts from "../../../assets/data/posts.json";
 
 export default function HomeScreen() {
+  const post = posts[0];
   return (
     <View>
-      <Text>index</Text>
+      <View style={{ flexDirection: "row", gap: 10 }}>
+        <Image
+          source={{ uri: post.group.image }}
+          style={{ width: 20, height: 20, borderRadius: 15 }}
+        />
+        <Text style={{ fontWeight: "bold" }}>{post.group.name}</Text>
+        <Text style={{ color: "grey" }}>
+          {formatDistanceToNowStrict(new Date(post.created_at))}
+        </Text>
+        <View style={{ marginLeft: "auto" }}>
+          <Text
+            style={{
+              backgroundColor: "#0d469b",
+              color: "white",
+              paddingVertical: 2,
+              paddingHorizontal: 7,
+              borderRadius: 10,
+              fontWeight: "bold",
+            }}
+          >
+            Join
+          </Text>
+        </View>
+      </View>
     </View>
   );
 }
